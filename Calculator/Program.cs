@@ -19,7 +19,7 @@
                 while (!Double.TryParse(Console.ReadLine(), out num2) || num1.ToString().Length > 25)
                 {
                     PrintError("[ERROR]: Value-2 must numberic\n");
-                    Console.Write("Please enter secound number: ");
+                    Console.Write("Please enter second number: ");
                 }
                 Console.WriteLine();
                 #endregion User Inputs
