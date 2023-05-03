@@ -12,13 +12,13 @@
                 Console.Write("\n\nPlease enter first number: ");
                 while (!Double.TryParse(Console.ReadLine(), out num1))
                 {
-                    PrintError("[ERROR]: Value-1 must numberic\n");
+                    PrintError("[ERROR]: first number must numberic\n");
                     Console.Write("Please enter first number: ");
                 }
                 Console.Write("Please enter second number: ");
                 while (!Double.TryParse(Console.ReadLine(), out num2) || num1.ToString().Length > 25)
                 {
-                    PrintError("[ERROR]: Value-2 must numberic\n");
+                    PrintError("[ERROR]: second number must numberic\n");
                     Console.Write("Please enter second number: ");
                 }
                 Console.WriteLine();
