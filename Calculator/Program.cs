@@ -1,8 +1,8 @@
 ﻿namespace Calculator
 {
-    internal static class Program
+    public static class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
             do
             {
@@ -37,36 +37,34 @@
             #endregion Appreciations
 
         }
-        static void Calculate(double num1, double num2)
+        public static void Calculate(double num1, double num2)
         {
-            double add = num1 + num2;
-            double sub = num1 - num2;
-            double mul = num1 * num2;
-            double div = 0;
+            ResultSet res = new ResultSet();
+            res.Add = num1 + num2;
+            res.Sub = num1 - num2;
+            res.Mul = num1 * num2;
 
             try
             {
                 if (num2 == 0) throw new DivideByZeroException();
-                div = num1 / num2;
+                res.Div = num1 / num2;
             }
             catch (DivideByZeroException)
             {
                 PrintError($"[Exception]: Can't divide {num1} by zero(0).");
             }
-
-            PrintData((add, sub, mul, div), num1, num2);
-
+            PrintData(res, num1, num2);
         }
-        static void PrintData((double add, double sub, double mul, double div) data, double num1, double num2)
+        public static void PrintData(ResultSet data, double num1, double num2)
         {
             Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine("=======================================");
             Console.WriteLine($"\t\tResult");
             Console.WriteLine("=======================================");
-            Console.WriteLine($" {num1} + {num2} = {data.add}");
-            Console.WriteLine($" {num1} - {num2} = {data.sub}");
-            Console.WriteLine($" {num1} * {num2} = {data.mul}");
-            Console.WriteLine($" {num1} / {num2} = {data.div}");
+            Console.WriteLine($" {num1} + {num2} = {data.Add}");
+            Console.WriteLine($" {num1} - {num2} = {data.Sub}");
+            Console.WriteLine($" {num1} * {num2} = {data.Mul}");
+            Console.WriteLine($" {num1} / {num2} = {data.Div}");
             Console.WriteLine("=======================================");
             Console.ForegroundColor = ConsoleColor.White;
         }
